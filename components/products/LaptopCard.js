@@ -10,7 +10,6 @@ const LaptopCard = () => {
                 </Link>
                 <div className="text-center">
                     <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY:<span className='text-gray-900 text-sm font-medium'>Laptops</span></h3>
-                    <h2 className=""></h2>
                     <p className="mt-1">₹50000</p>
                     <Link href={''} className='text-sm overflow-hidden'>HP Laptop 15s, 12th Gen Intel Core i3, 15.6-inch (39.6 cm), 8GB DDR4, 512GB SSD, Thin & Light, Dual Speakers (Win 11, MSO 2021, Silver, 1.69 kg), fq5007TU / FQ5327TU</Link>
                     <div className='flex gap-2 text-sm m-2'>
