@@ -6,7 +6,7 @@ import Image from 'next/image'
 const SmartphoneCard = () => {
   return (
     <>
-      <div className="w-[21rem] sm:w-[22rem] h-[30rem] shadow-xl shadow-gray-800">
+      <div className="w-[21rem] h-[30rem] shadow-xl shadow-gray-800">
         <Link href={''}>
           <Image src={'/iphone.webp'} height={300} width={300} alt='Iphone'
             className='mx-auto'
