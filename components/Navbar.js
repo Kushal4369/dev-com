@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { FiMenu } from "react-icons/fi";
@@ -31,25 +31,26 @@ const Navbar = () => {
                 style={{
                     width: '56px',
                     height: '56px',
-                    position: 'absolute'
+                    position: 'absolute',
+                    zIndex:20
 
                 }}></Image>
             <div className='flex flex-col w-full items-center'>
 
                 <button  id='nav'
-                    className='text-white text-center text-xl mt-64 sm:hidden flex items-center gap-3 '
+                    className='text-white text-center text-xl sm:hidden flex items-center gap-3 '
                     onClick={menu}>
                     Menu{(menuState=='hidden')?<FiMenu />: <IoMdCloseCircleOutline/>}
                 </button>
 
                 <ul
-                    className={`flex-col ${(menuState=='hidden')?'invisible': ''} flex z-10 w-full bg-black  text-sm  gap-8 items-center justify-center py-4 px-12 sm:visible sm:flex-row`}
+                    className={`flex-col ${(menuState=='hidden')?'invisible': ''} flex z-10 w-full bg-black  text-sm  gap-6 items-center justify-center px-12 py-3 absolute top-[56px] sm:visible sm:flex-row sm:static`}
                     ref={navbarRef}>
-                    <li className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2'><Link href={'/'}>Home</Link></li>
-                    <li className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2'><Link href={'/laptops'}>Laptops</Link></li>
-                    <li className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2'><Link href={'/smartphones'}>Smartphones</Link></li>
-                    <li className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2'><Link href={'/headphones'}>Headphones</Link></li>
-                    <li className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2'><Link href={'/bags'}>Bags</Link></li>
+                    <li><Link  className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/'}>Home</Link></li>
+                    <li><Link className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/laptops'}>Laptops</Link></li>
+                    <li><Link className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/smartphones'}>Smartphones</Link></li>
+                    <li><Link className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/headphones'}>Headphones</Link></li>
+                    <li><Link className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/bags'}>Bags</Link></li>
                 </ul>
 
             </div>
