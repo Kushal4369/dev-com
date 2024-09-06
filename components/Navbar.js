@@ -21,7 +21,11 @@ const Navbar = () => {
             setMenuState("visible")
         }
     }
+    const showCart= ()=> {
+        const cart = document.getElementById('cart')
+        cart.classList.remove('translate-x-96')
 
+    }
 
 
     return (<>
@@ -44,7 +48,7 @@ const Navbar = () => {
                 </button>
 
                 <ul
-                    className={`flex-col ${(menuState=='hidden')?'invisible': ''} flex z-10 w-full bg-black  text-sm  gap-6 items-center justify-center px-12 py-3 absolute top-[56px] sm:visible sm:flex-row sm:static`}
+                    className={`flex-col ${(menuState=='hidden')?'invisible': ''} flex  w-full bg-black  text-sm  gap-6 items-center justify-center px-12 py-3 absolute top-[56px] sm:visible sm:flex-row sm:static`}
                     ref={navbarRef}>
                     <li><Link  className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/'}>Home</Link></li>
                     <li><Link className='hover:text-gray-800 hover:bg-gray-200 rounded-md px-5 py-2 ' href={'/laptops'}>Laptops</Link></li>
@@ -55,7 +59,7 @@ const Navbar = () => {
 
             </div>
 
-            <MdShoppingCart className='absolute right-2 top-2 text-3xl' />
+            <MdShoppingCart className='absolute right-2 top-2 text-3xl' onClick={showCart} />
         </div>
 
 

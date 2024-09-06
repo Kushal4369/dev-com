@@ -1,9 +1,12 @@
+
 import Image from "next/image";
 
 
 export default function Home() {
+
+  
   return (
-    <div>
+    <>
       <Image src={'/background.jpg'} alt="background" height={800} width={1000} className="z-0" />
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-wrap w-full flex-col items-center text-center">
@@ -11,7 +14,8 @@ export default function Home() {
           <p className="lg:w-1/2 w-full leading-relaxed text-gray-500">Explore a wide range of tech products.</p>
         </div>
       </div>
-      </div>
+      
+    </>
 
-      );
+  );
 }

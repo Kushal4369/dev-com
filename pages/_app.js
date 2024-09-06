@@ -1,5 +1,6 @@
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
+import Cart from "@/components/Cart";
 import "@/styles/globals.css";
 
 
@@ -9,6 +10,6 @@ export default function App({ Component, pageProps }) {
 
   <Component {...pageProps} />
   <Footer />
-  <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+  <Cart />
   </>
 }
