@@ -36,8 +36,6 @@ const Navbar = () => {
                     width: '56px',
                     height: '56px',
                     position: 'absolute',
-                    zIndex:20
-
                 }}></Image>
             <div className='flex flex-col w-full items-center'>
 
