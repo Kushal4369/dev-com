@@ -1,12 +1,32 @@
 import { useRouter } from "next/router"
 import Image from "next/image"
+import { useRef, useState } from "react";
 
 const Post = () => {
+    const [pincode, setPincode] = useState()
+    const [availability, setAvailability] = useState()
 
-    const router =  useRouter();
-    const {slug} = router.query;
+
+    const router = useRouter();
+    const { slug } = router.query;
+
+    const checkPincode = async () => {
+        const res = await fetch("http://localhost:3000/api/pincodes")
+        const pincodes = await res.json()
+
+        if (pincodes.includes(parseInt(pincode))) {         
+            setAvailability(true)
+
+        }
+        else {
+            setAvailability(false)
+
+        }
+
+
+    }
+    console.log(availability);
     
-
     return (
         <section className="text-gray-600 body-font overflow-hidden">
             <div className="container px-5 py-24 mx-auto">
@@ -80,6 +100,16 @@ const Post = () => {
                             <button className="flex mx-auto  text-white bg-gray-800 border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded ">Add to Cart</button>
                             <button className="flex mx-auto  text-white bg-gray-800 border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded ">Buy Now</button>
                         </div>
+                        <div className="flex justify-center gap-5 my-10 text-sm md:text-md">
+                            <input type="text" className="border border-gray-600 rounded-lg px-1" placeholder="Enter Pincode"
+                                onChange={(e) => setPincode(e.target.value)}></input>
+                            <button onClick={checkPincode} className="flex text-white bg-gray-800 border-0 py-2 px-4 focus:outline-none hover:bg-gray-700 rounded ">Check Availability</button>
+
+                        </div>
+
+
+                        {(availability  && availability!=null) && <p className="text-center text-green-600 border border-green-500 " > Hurray!!! The product is available at your pincode.</p>}
+                        {!availability && availability!=null && <p className="text-center text-red-600 border border-red-500 " > Oops!!! The product is not available at your pincode.</p>}
                     </div>
                 </div>
             </div>
